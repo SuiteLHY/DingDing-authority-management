@@ -11,7 +11,10 @@ const $axios = axios.create({
   // 基础url，会在请求url中自动添加前置链接
   baseURL: process.env.VUE_APP_BASE_API
 })
-Vue.prototype.$http = axios // 并发请求
+
+// 并发请求
+Vue.prototype.$http = axios 
+
 // 在全局请求和响应拦截器中添加请求状态
 let loading = null
 
@@ -29,12 +32,14 @@ $axios.interceptors.request.use(
     return Promise.reject(error)
   }
 )
+
 // 响应拦截器
 $axios.interceptors.response.use(
   response => {
     if (loading) {
       loading.close()
     }
+	
     const code = response.status
     if ((code >= 200 && code < 300) || code === 304) {
       return Promise.resolve(response.data)
@@ -46,6 +51,7 @@ $axios.interceptors.response.use(
     if (loading) {
       loading.close()
     }
+	
     console.log(error)
     if (error.response) {
       switch (error.response.status) {

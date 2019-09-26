@@ -18,14 +18,17 @@
         </div>
       </transition>
     </div>
+
     <div class="loginBox">
       <h2 class="loginH2"><strong>Vue</strong> 后台管理系统</h2>
+
       <div class="loginCon">
         <div class="titleDiv">
           <h3>Sign up now</h3>
           <p>Enter your username and password to log on:</p>
           <i class="el-icon-key"></i>
         </div>
+
         <el-form ref="loginForm" :rules="rules" :model="ruleForm">
           <el-form-item prop="user">
             <el-input
@@ -34,6 +37,7 @@
               v-model="ruleForm.user"
             ></el-input>
           </el-form-item>
+
           <el-form-item prop="password">
             <el-input
               placeholder="请输入密码"
@@ -42,6 +46,7 @@
               show-password
             ></el-input>
           </el-form-item>
+
           <el-button
             type="primary"
             class="loginBtn"
@@ -56,6 +61,7 @@
 
 <script>
 import SlideVerify from '@/components/SlideVerify'
+
 export default {
   data() {
     return {
@@ -64,12 +70,12 @@ export default {
       showSlide: false,
       ruleForm: {
         user: 'admin',
-        password: '123456'
+        password: /* '123456' */ 'admin1'
       },
       rules: {
         user: [
           { required: true, message: '请输入用户名', trigger: 'blur' },
-          { min: 3, max: 15, message: '长度在3到5个字符', trigger: 'blur' }
+          { min: 3, max: 15, message: '长度在3到15个字符', trigger: 'blur' }
         ],
         password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
       }
@@ -101,8 +107,10 @@ export default {
     _login() {
       this.$store
         .dispatch('user/_login', this.ruleForm)
-        .then(res => {
-          if (!res.data.success) {
+					.then(res => {
+          // console.log('index.vue - _login() => res -> ' + JSON.stringify(res))
+
+          if (/* !res.data.success */ !res.access_token) {
             this.refresh()
           } else {
             this.$router.push(this.$route.query.redirect)
@@ -121,7 +129,7 @@ export default {
       this.notifyObj = this.$notify({
         title: '提示',
         message:
-          '目前有两个登陆角色，管理员和普通用户，账号分别为：admin、user,密码都为：123456',
+          '目前有两个登陆角色，管理员和普通用户，账号分别为：admin、user，密码分别为：admin1、123456',
         duration: 0,
         iconClass: 'el-icon-s-opportunity'
       })
@@ -132,6 +140,7 @@ export default {
   }
 }
 </script>
+
 <style scoped lang="scss">
 .login {
   height: 100%;
@@ -226,6 +235,7 @@ export default {
   }
 }
 </style>
+
 <style>
 .slideSty .slide-verify {
   margin: 13px auto 0 auto;

@@ -5,7 +5,7 @@ const resolve = function(dir) {
 
 module.exports = {
   publicPath:
-    process.env.NODE_ENV === 'production' ? '/vue-admin-webapp/' : '/',
+    process.env.NODE_ENV === 'production' ? '/dingding-vue-admin-webapp/' : '/',
   outputDir: 'dist',
   assetsDir: 'static',
   lintOnSave: true, // 是否开启eslint保存检测
@@ -33,7 +33,23 @@ module.exports = {
         pathRewrite: {
           ['^' + process.env.VUE_APP_BASE_API]: ''
         }
-      }
+      },
+			[process.env.VUE_APP_SSO_SERVER_API]: {
+			  target: process.env.VUE_APP_SSO_SERVER_API,
+			  changeOrigin: true,
+			  secure: false,
+			  pathRewrite: {
+			    ['^' + process.env.VUE_APP_SSO_SERVER_API]: ''
+			  }
+			},
+			[process.env.VUE_APP_AUTHORIZATION_SERVER_API]: {
+			  target: process.env.VUE_APP_AUTHORIZATION_SERVER_API,
+			  changeOrigin: true,
+			  secure: false,
+			  pathRewrite: {
+			    ['^' + process.env.VUE_APP_AUTHORIZATION_SERVER_API]: ''
+			  }
+			}
     }
   }
 }

@@ -1,5 +1,5 @@
 /*
-set sidebar open or close,and some app setting
+set sidebar open or close, and some app setting
  */
 const state = {
   opened: sessionStorage.getItem('open')
@@ -10,6 +10,7 @@ const state = {
     ? localStorage.getItem('driver')
     : 'yes'
 }
+
 const mutations = {
   SET_OPENED(state, payload) {
     state.opened = String(payload)
@@ -23,6 +24,7 @@ const mutations = {
     localStorage.setItem('driver', payload)
   }
 }
+
 export default {
   namespaced: true,
   state,
