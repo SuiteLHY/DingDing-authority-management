@@ -4,22 +4,28 @@
       <div class="perh_d1">
         <div class="perh_info">
           <p class="perh_p0">{{ userName }}</p>
+
           <div class="chatBox">
             <a href="javascript:;"><i class="iconfont el-icon-weixin"></i></a>
             <a href="javascript:;"><i class="iconfont el-icon-twitter"></i></a>
             <a href="javascript:;"><i class="iconfont el-icon-weibo"></i></a>
           </div>
+
           <p>{{ introduce }}</p>
         </div>
+
         <img src="../../assets/personal/user01.jpg" />
+
         <div class="rightIcon">
-          <span style="margin-right: 20px;"
-            ><i class="el-icon-star-on"></i>Collection</span
-          >
+          <span style="margin-right: 20px;">
+            <i class="el-icon-star-on"></i>Collection
+          </span>
+
           <span><i class="el-icon-chat-dot-round"></i>Message</span>
         </div>
       </div>
     </div>
+
     <el-tabs>
       <el-tab-pane label="Timeline">
         <!-- <el-button type="primary" slot="label">Timeline</el-button> -->
@@ -30,18 +36,21 @@
               <p>提交于 2019/4/12 20:46</p>
             </el-card>
           </el-timeline-item>
+
           <el-timeline-item timestamp="2019/4/3" placement="top">
             <el-card>
               <h4>更新 Github 模板</h4>
               <p>提交于 2018/4/3 20:46</p>
             </el-card>
           </el-timeline-item>
+
           <el-timeline-item timestamp="2019/4/2" placement="top">
             <el-card>
               <h4>更新 Github 模板</h4>
               <p>提交于 2019/4/2 20:46</p>
             </el-card>
           </el-timeline-item>
+
           <el-timeline-item timestamp="2019/4/1" placement="top">
             <el-card>
               <h4>更新 Github 模板</h4>
@@ -50,6 +59,7 @@
           </el-timeline-item>
         </el-timeline>
       </el-tab-pane>
+
       <el-tab-pane label="Message">
         <!-- <el-button type="success" slot="label">Message</el-button> -->
         Message
@@ -60,12 +70,14 @@
 
 <script>
 import { mapGetters } from 'vuex'
+
 export default {
   computed: {
     ...mapGetters(['userName', 'introduce'])
   }
 }
 </script>
+
 <style lang="scss" scoped>
 .personal_h {
   width: 100%;
@@ -132,6 +144,7 @@ export default {
   }
 }
 </style>
+
 <style lang="scss">
 .personal {
   .el-tabs__header {

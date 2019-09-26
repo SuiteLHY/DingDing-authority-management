@@ -78,6 +78,7 @@ export const currencyRoutes = [
     ]
   }
 ]
+
 /*动态添加routers*/
 export const asyncRoutes = [
   {
@@ -259,6 +260,7 @@ export const asyncRoutes = [
     hidden: true
   }
 ]
+
 const creatRouter = () => {
   return new Router({
     routes: currencyRoutes,
@@ -312,4 +314,5 @@ router.beforeEach(async (to, from, next) => {
     }
   }
 })
+
 export default router
