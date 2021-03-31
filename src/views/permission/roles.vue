@@ -119,6 +119,9 @@ function refreshTable(pointer, pageIndex, pageCapacity) {
 	pointer.treeData = []
 	pointer._getAllRoles(pageCapacity, pageIndex)
 	pointer.treeData = pointer.getTreeData(pointer.allRoute)
+	
+	pointer.pageSize = pageCapacity
+	pointer.currentPage = pageIndex
 }
 
 /**
