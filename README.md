@@ -39,7 +39,7 @@
 
 > 在开始之前，请确保在本地安装 node 和 webpack 及 git。 本项目涉及的技术栈主要有 [ES6](http://es6.ruanyifeng.com/) 、[vue](https://cn.vuejs.org/) 、[vuex](https://vuex.vuejs.org/zh/) 、[vue-router](https://router.vuejs.org/zh/) 、[vue-cli](https://cli.vuejs.org/zh/guide/) 、[axios](http://www.axios-js.com/) 、[webpack](https://www.webpackjs.com/) 、[element-ui](https://element.eleme.io/#/zh-CN) 、[easyMock](https://www.easy-mock.com/) ,所以你最好提前熟悉了解这些知识，这将对你认识学习该项目有很大帮助
 
-详细的项目介绍，可以关注我的的相关文章：
+详细的项目介绍，可以关注原始项目作者的的相关文章：
 
 [正确姿势开发 vue 后台管理系统](https://juejin.im/post/5d69f6676fb9a06b0b1c8cd2)
 
